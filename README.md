@@ -3,7 +3,7 @@ Experiments and data for the paper "When and why vision-language models behave l
 This paper got an Oral (notable-top-5%) at ICLR 2023! Soon you can find our camera-ready version [here](https://openreview.net/forum?id=KRLUvxh8uaX).
 
 
-*Imporant Note*: Thank you for your interest. I apologize for the delay in releasing the code and the camera-ready version, I will do my best to make up for the missing bits as soon as possible. I am currently in Turkey after the devastating [Turkey-Syria earthquake](https://en.wikipedia.org/wiki/2023_Turkey%E2%80%93Syria_earthquake). Not only me, but also tens of thousands of people lost their families and homes. Please consider [donating](https://ahbap.org/), and at the very least please ask your friends with connections to the regions how they are doing. 
+**Imporant Note**: Thank you for your interest. I apologize for the delay in releasing the code and the camera-ready version, I will do my best to make up for the missing bits as soon as possible. I am currently in Turkey after the devastating [Turkey-Syria earthquake](https://en.wikipedia.org/wiki/2023_Turkey%E2%80%93Syria_earthquake). Not only me, but also tens of thousands of people lost their families and homes. Please consider [donating](https://ahbap.org/), and at the very least please ask your friends with connections to the regions how they are doing. 
 
 Below we give details about how to easily use our dataset and models, and reproduce our experiments.
 
