@@ -61,10 +61,8 @@ COCA & CLIP on LAION | We added the usage of the other models in the open_clip r
 
 
 ## NegCLIP Training
-We trained the NegCLIP with a fork of the `open_clip` repo. You can find the fork [here](https://github.com/vinid/open_clip). Our modifications are super minor.
-```python
-# TODO : Fede
-```
+We trained the NegCLIP with a fork of the `open_clip` repo. You can find the fork [here](https://github.com/vinid/open_clip). Our modifications are super minor and you will find an detailed description of the main edits [here](https://github.com/vinid/neg_clip#negclip-implementation).
+
 We plan to add support for the distributed setting in the future. However, we trained the model using a single GPU (which is quite a bit of a limitation). Here's the command to reproduce results:
 ```base
 CUDA_VISIBLE_DEVICES=0 python -m training.main \
