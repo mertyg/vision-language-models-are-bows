@@ -1,4 +1,7 @@
 # When and why vision-language models behave like bags-of-words, and what to do about it? (ICLR 2023 Oral)
+
+[![Medium Blog Post](https://raw.githubusercontent.com/aleen42/badges/master/src/medium.svg)](https://towardsdatascience.com/your-vision-language-model-might-be-a-bag-of-words-30b1beaef7f8)
+
 Experiments and data for the paper "When and why vision-language models behave like bags-of-words, and what to do about it?". <br>
 This paper got an Oral (notable-top-5%) at ICLR 2023! You can find our camera-ready version [here](https://openreview.net/forum?id=KRLUvxh8uaX).
 
