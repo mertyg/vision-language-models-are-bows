@@ -10,7 +10,7 @@ from torch.utils.data import Dataset
 from easydict import EasyDict as edict
 from torchvision.datasets.utils import download_url
 
-from .perturbations import shuffle_nouns_and_adj, shuffle_allbut_nouns_and_adj, shuffle_within_trigrams, shuffle_trigrams
+from .perturbations import TextShuffler
 from .constants import ARO_ROOT, COCO_ROOT, FLICKR_ROOT
 from .retrieval import pre_caption
 
@@ -205,7 +205,10 @@ class COCO_Order(Dataset):
         image_perturb_fn: not used; for compatibility.
         download: Whether to download the dataset if it does not exist.
         """
-        perturb_functions = [shuffle_nouns_and_adj, shuffle_allbut_nouns_and_adj, shuffle_within_trigrams, shuffle_trigrams]
+        shuffler = TextShuffler()
+        perturb_functions = [shuffler.shuffle_nouns_and_adj, shuffler.shuffle_allbut_nouns_and_adj,
+                             shuffler.shuffle_within_trigrams, shuffler.shuffle_trigrams]
+
         self.root_dir = root_dir
         if not os.path.exists(root_dir):
             print("Directory for COCO could not be found!")
@@ -303,8 +306,9 @@ class Flickr30k_Order(Dataset):
         
         self.test_cases = []
         
-        perturb_functions = [shuffle_nouns_and_adj, shuffle_allbut_nouns_and_adj, shuffle_within_trigrams, shuffle_trigrams]
-                
+        shuffler = TextShuffler()
+        perturb_functions = [shuffler.shuffle_nouns_and_adj, shuffler.shuffle_allbut_nouns_and_adj,
+                             shuffler.shuffle_within_trigrams, shuffler.shuffle_trigrams]
         for img_id, ann in tqdm(enumerate(self.annotation)):
             for i, caption in enumerate(ann['caption']):
                 test_case = {}
