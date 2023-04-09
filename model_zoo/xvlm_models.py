@@ -51,6 +51,7 @@ class XVLMWrapper:
             is_pretrained=False
         self.model.load_pretrained(self.model_path, self.config, is_eval=True, is_pretrained=is_pretrained)
         self.model = self.model.to(device)
+        self.model = self.model.eval()
         self.device = device
         if self.config['use_roberta']:
             self.tokenizer = RobertaTokenizer.from_pretrained(self.config['text_encoder'])

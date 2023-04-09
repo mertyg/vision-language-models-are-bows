@@ -13,6 +13,7 @@ def get_model(model_name, device, root_dir=CACHE_DIR):
         from .clip_models import CLIPWrapper
         variant = model_name.split(":")[1]
         model, image_preprocess = clip.load(variant, device=device, download_root=root_dir)
+        model = model.eval()
         clip_model = CLIPWrapper(model, device) 
         return clip_model, image_preprocess
 
@@ -68,6 +69,7 @@ def get_model(model_name, device, root_dir=CACHE_DIR):
             import gdown
             gdown.download(id="1ooVVPxB-tvptgmHlIMMFGV3Cg-IrhbRZ", output=path, quiet=False)
         model, _, image_preprocess = open_clip.create_model_and_transforms('ViT-B-32', pretrained=path, device=device)
+        model = model.eval()
         clip_model = CLIPWrapper(model, device) 
         return clip_model, image_preprocess
 
@@ -75,6 +77,7 @@ def get_model(model_name, device, root_dir=CACHE_DIR):
         import open_clip
         from .clip_models import CLIPWrapper
         model, _, image_preprocess = open_clip.create_model_and_transforms(model_name="coca_ViT-B-32", pretrained="laion2B-s13B-b90k", device=device)
+        model = model.eval()
         clip_model = CLIPWrapper(model, device) 
         return clip_model, image_preprocess
     
@@ -84,6 +87,7 @@ def get_model(model_name, device, root_dir=CACHE_DIR):
         from .clip_models import CLIPWrapper
         variant = model_name.split(":")[1]
         model, _, image_preprocess = open_clip.create_model_and_transforms(model_name=variant, pretrained="laion2b_s34b_b79k", device=device)
+        model = model.eval()
         clip_model = CLIPWrapper(model, device) 
         return clip_model, image_preprocess
     

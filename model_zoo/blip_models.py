@@ -44,6 +44,7 @@ class BLIPModelWrapper:
                                 queue_size=config['queue_size'], negative_all_rank=config['negative_all_rank'],
                                 med_config=config['med_config'])
         self.model = model.to(device)
+        self.model = self.model.eval()
         self.device = device
     
     
