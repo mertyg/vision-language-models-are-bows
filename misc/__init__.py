@@ -6,8 +6,11 @@ import re
 import os
 import pickle
 import collections
-from torch._six import string_classes
 import PIL
+try:
+    from torch._six import string_classes
+except ImportError:
+    string_classes = (str,)
 
 
 def seed_all(seed):
